@@ -24,6 +24,24 @@ A simple collection of useful libraries to C.
 
 ### Writing conventions
 
+#### Comments
+
+Avoid to use *line comments* (C++ style comments) in libraries that do not depend
+of the >=C99 Standard, because \<C99 do not have a *official support* (from Standard
+to them.
+
+> [!NOTE]
+> Some compilers, like *gcc*, can fix them syntax, but it is not a global rule. Some
+> compilers, with enphasis in *strict compilers*, can do not allow them.
+
+``` c
+// C90 do not support
+
+/* C90 supports */
+```
+
+
+
 #### Exported case styles
 
 * *PascalCase*
