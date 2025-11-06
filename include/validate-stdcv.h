@@ -23,29 +23,34 @@
 #ifndef _JUMP_STDCV_VALIDATION
 #define _JUMP_STDCV_VALIDATION
 
-
 /*
  * EXPECTED_STDCV ust be declared during the compilator call. They valid
  * values are, respectivelly (yyyymm):
  * - xxxxxx : C89/C90
- * - 199001 : C99
+ * - 199901 : C99
  * - 201112 : C11
  * - 201710 : C17/C18
  * */
 
 #ifdef __STDC_VERSION__
-#	ifndef EXPECTED_STDCV
+#	ifdef EXPECTED_STDCV
+#		if EXPECTED_STDCV >= 199001L && EXPECTED_STDCV <= 299912L
+#			if __STDC_VERSION__ < EXPECTED_STDCV
+#				error "Invalid C Standard version"
+#			endif
+#		else
+#			error "Invalid value to EXPECTED_STDCV"
+#		endif
+#	else
 #		error "Preprocessing constant not defined: EXPECTED_STDCV"
 #	endif
-#   if EXPECTED_STDCV < 199001L || EXPECTED_STDCV > 299912L
-#		error "Invalid value to EXPECTED_STDCV"
-#	endif
-#	if __STDC_VERSION__ < EXPECTED_STDCV
-#		error "Invalid C Standard version."
-#	endif
 #else
-#	ifdef __cplusplus
-#		error "The constant `__STDC_VERSION__` was not defined. Maybe it is being related with anything C++ compiler option."
+#	if EXPECTED_STDCV != 0
+#		error "Invalid C Standard version"
+#	else
+#		ifdef __cplusplus
+#			error "The constant `__STDC_VERSION__` was not defined. Maybe it is being related with anything C++ compiler option"
+#		endif
 #	endif
 #endif
 
