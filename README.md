@@ -8,7 +8,9 @@ A simple collection of useful libraries to C.
 
 ### Available libraries
 
-> Comming soon...
+[str]: ./src/String
+
+> [String][str]: provides resources to manage null terminated string memory automatically.
 
 
 
@@ -50,10 +52,10 @@ A simple collection of useful libraries to C.
 * `_*`: indicates that a identifier must not be manipulated (to read, to edit, ...)
         directly
         by the user code, only by the library code.
-* `*_t`: indicates that the identifier is a type (that it had not based in a
-         **`struct`**) defined with `typedef`.
-* `u*`: indicates that the identifier is a type (that it had not based in a
-        **`union`**) defined with `typedef`.
+* `*_t`: indicates that the identifier is a type, that it did not based in a
+         **`struct`**, defined with `typedef`.
+* `u*`: indicates that the identifier is a type, that it was based in a **`union`**,
+        defined with `typedef`.
 
 
 
@@ -92,19 +94,21 @@ A simple collection of useful libraries to C.
 				  a ***single****-function* process.
 	* Micenllaneous:
 		* `content`: the main content of an object.
-		* `length`:  is the length of a chain of values, objects, or similar.
+		* `index`: position of an element in a *list-like*.
 		* `new*`: a value that will be created and used to replaced other.
 		* `old*`: a value that will be replaced by other.
 	* Parameters:
 		* `dest`: will receive the values(s) resulting from the process.
-		* `n`: represents the quantity of a generic things.
+		* `n`: represents a quantity, in bytes.
 		* `src`: contains the value(s) that will be used during the process.
 	* Properties:
+		* `length`: quantity of **items** that compound an items list.
 		* `next`: is the next item of a linked list.
+		* `size`: quantity of **bytes** that compound an items list.
 
 > [!IMPORTANT]
-> `*n*` must be between two, or more, (shortened) words. Similar: `strncat`; `strncpy`.
 > `*` indicates that the word **can be** prefixed and/or suffixed.
+> `*n*` must be between two, or more, (shortened) words. Similar: `strncat`; `strncpy`.
 
 
 
