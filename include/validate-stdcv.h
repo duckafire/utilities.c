@@ -22,18 +22,18 @@
  * SOFTWARE.
  * */
 
+/* VERSION: 0.1.1 */
+
 #ifndef _JUMP_STDCV_VALIDATION
 #define _JUMP_STDCV_VALIDATION
-
-/* VERSION: 0.1.1 */
 
 /*
  * EXPECTED_STDCV ust be declared during the compilator call. They valid
  * values are, respectivelly (yyyymm):
- * - xxxxxx : C89/C90
- * - 199901 : C99
- * - 201112 : C11
- * - 201710 : C17/C18
+ * - 0L      : c89/c90
+ * - 199901L : c99
+ * - 201112L : c11
+ * - 201710L : c17/c18
  * */
 
 #ifdef __STDC_VERSION__

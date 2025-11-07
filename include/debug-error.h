@@ -20,8 +20,10 @@
  * 3. This notice may not be removed or altered from any source distribution.
  * */
 
-#ifndef __UTILITIES_C__DEBUG_ERROR__
-#define __UTILITIES_C__DEBUG_ERROR__
+/* VERSION: 0.0.1 */
+
+#ifndef _DISABLE_DEBUG_ERROR
+#define _DISABLE_DEBUG_ERROR
 
 #	ifdef __cplusplus
 extern "C" {
@@ -38,9 +40,9 @@ extern "C" {
 #			define __LINE__ -1
 #		endif
 
-		/* [ERROR]
-		 * Line: x | File: /path/to/file.c
-		 * 	Error message. */
+		/** [ERROR]
+		 ** Line: x | File: /path/to/file.c
+		 ** 	Error message. */
 #		define DEBUG_ERROR(msg) printf("\e[31;1m[ERROR]\n\e[0m\e[31mLine: %lld | File: %s\n\t%s\e[0m\n", __LINE__, __FILE__, msg)
 
 #	else
@@ -51,4 +53,4 @@ extern "C" {
 }
 #	endif
 
-#endif /* __UTILITIES_C__DEBUG_ERROR__ */
+#endif /* _DISABLE_DEBUG_ERROR */
