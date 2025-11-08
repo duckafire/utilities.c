@@ -1,7 +1,10 @@
 /*
- * MIT License
+ * AUTHORS:     DuckAfire
+ * DESCRIPTION: preprocessor algorithm to validate C Standard version defined to the compilation.
+ * C STANDARD:  c89, c90
+ * LICENSE:     MIT License
  *
- * Copyright (c) 2024-2025 DuckAfire <duckafire.github.io/nest>
+ * Copyright (C) 2025 DuckAfire <https://duckafire.gitlab.io>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal

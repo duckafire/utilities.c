@@ -1,5 +1,8 @@
 /*
- * Zlib License
+ * AUTHORS:     DuckAfire
+ * DESCRIPTION: provides resources to manage null terminated string memory automatically.
+ * C STANDARD:  c89, c90
+ * LICENSE:     Zlib License
  *
  * Copyright (C) 2025 DuckAfire <https://duckafire.gitlab.io>
  *

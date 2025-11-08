@@ -1,5 +1,8 @@
 /*
- * Zlib License
+ * AUTHORS:     DuckAfire
+ * DESCRIPTION: macros to debugging in runtime.
+ * C STANDARD:  c89, c90
+ * LICENSE:     Zlib License
  *
  * Copyright (C) 2025 DuckAfire <https://duckafire.gitlab.io>
  *
