@@ -168,9 +168,12 @@ CCO :=$(CC_FLAGS) $(PP_VARS)
 ##############################################################################
 # PHONY TARGETS
 
-.PHONY: all
+.PHONY: all test
 
 all: $(DEST) $(DEST_STRING)
+
+test: $(DEST)
+	@$(foreach exec, $(wildcard $(DEST)/*), ./$(exec))
 
 
 
