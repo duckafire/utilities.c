@@ -20,7 +20,7 @@
  * 3. This notice may not be removed or altered from any source distribution.
  * */
 
-/* VERSION: 0.0.1 */
+/* VERSION: 0.0.2 */
 
 #ifndef __UTILITITES_C__STRING_EXTRA__
 

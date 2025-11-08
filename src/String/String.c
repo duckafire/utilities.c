@@ -126,7 +126,8 @@ String* strnpushs(String *dest, const char *src, size_t n)
 		return NULL;
 	}
 
-	for(size_t i = 0; true; i++)
+	size_t i = 0;
+	for(i = 0; true; i++)
 	{
 		newcontent[ dest->length + i ] = src[i];
 
@@ -154,7 +155,8 @@ String* strmerge(const String *src0, const String *src1)
 
 	String *dest;
 
-	for(short i = 0; i < 2; i++)
+	short i;
+	for(i = 0; i < 2; i++)
 	{
 		if(i == 0)
 			 dest = strclone(src0);
@@ -208,7 +210,8 @@ String* strsubstr(const String *str, size_t index, size_t n)
 		return NULL;
 	}
 
-	for(size_t i = 0; i < n; i++)
+	size_t i;
+	for(i = 0; i < n; i++)
 		tmp[i] = (str->content)[index + i];
 
 	tmp[n] = EOS;
@@ -266,7 +269,8 @@ String* strcut(String *str, size_t index, size_t n)
 	}
 
 	/* `i` to `newcontent` | `j` to `str` */
-	for(size_t i = 0, j = 0; true; i++, j++)
+	size_t i, j;
+	for(i = 0, j = 0; true; i++, j++)
 	{
 		if(j == index)
 			j += n;
