@@ -1,8 +1,26 @@
 [include-guard-c]: https://stackoverflow.com/questions/27810115/what-exactly-do-c-include-guards-do#27810143 "What exactly do C include guards do?"
+[zlib-license]: https://www.zlib.net/zlib_license.html "zLib License header"
 
 ## utilities.c
 
 A simple collection of useful libraries to C.
+
+
+
+#### Topics
+
+* [Available libraries](#available-libraries)
+* [Subdirectories structure](#subdirectories-structure)
+* [About libraries](#about-libraries)
+	* [Text header](#text-header)
+	* [Dependences](#dependences)
+* [Writing conventions](#writing-conventions)
+	* [Exported case styles](#exported-case-styles)
+	* [Available matching patterns](#available-matching-patterns)
+	* [Dictionary](#dictionary)
+	* [Case styles](#case-styles)
+		* [Libraries](#libraries)
+		* [Code identifiers](#code-identifiers)
 
 
 
@@ -22,25 +40,54 @@ A simple collection of useful libraries to C.
 
 
 
-### Writing conventions
+### About libraries
 
-#### Comments
+#### Text header
 
-Avoid to use *line comments* (C++ style comments) in libraries that do not depend
-of the >=C99 Standard, because \<C99 do not have a *official support* (from Standard
-to them.
-
-> [!NOTE]
-> Some compilers, like *gcc*, can fix them syntax, but it is not a global rule. Some
-> compilers, with enphasis in *strict compilers*, can do not allow them.
+As way to easily the compilation (mainly in different OS) and the understanding of the
+licensing terms of the libraries from this project, both they must include the text
+header below:
 
 ``` c
-// C90 do not support
-
-/* C90 supports */
+/*
+ * AUTHORS:     <developer-name0> [... [developer-nameN]]
+ * DESCRIPTION: <library-short-description>
+ * C STANDARD:  cXX
+ * LICENSE:     <license-name>
+ *
+ * <license-header
+ * .
+ * .
+ * .>
+ * */
 ```
 
+> [!WARNING]
+> After that a library license is chosen, it will not allow to change it.
 
+> [!IMPORTANT]
+> If you *publish* a library without to speficic a license, it will be licensed using
+> the [*Zlib License*][zlib-license] (the same license of this project).
+
+> [!NOTE]
+> This header must be inside header file (`*.h`); and it is optional in C files (`*.c`).
+
+
+
+#### Dependences
+
+As way to easiler the compilation of the libraries from this project, both they must
+depend only of libraries from C Standard chosen, and (optionally) of headers from
+`./include/` (from this project repository).
+
+> [!IMPORTANT]
+> `./include/` is a *special subdirectory*, that it contains some header files made
+> **only** with C preprocessor rules. Their content can be **optionally** required by
+> libraries of this project.
+
+
+
+### Writing conventions
 
 #### Exported case styles
 
@@ -132,14 +179,21 @@ to them.
 
 #### Case styles
 
-##### Files
+##### Libraries
+
+Below they are listed the case styles available to name the libraries directories:
 
 * *cobol-case*: has functions destined to the execution of similar works or related.
 * *PascalCase*: has functions to manipulate objects (based `struct`).
 
+> [!IMPORTANT]
+> The source files must be the same name of the library directory, with plus they
+> specific extension. Therefore, if a library directory is named as `foo`, their source
+> files must be named as `foo.c` and `foo.h`.
 
 
-##### Identifier
+
+##### Code identifiers
 
 * Identifiers:
 	* Local:
