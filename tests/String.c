@@ -9,12 +9,12 @@
 
 static void expect(const char *name, const char *excontent, String *str)
 {
-	// EXpected COntent LENgth
+	/* EXpected COntent LENgth */
 	const size_t EXCOLEN = strlen(excontent);
 
 	printf(
-		// name: [content == excontent] | [length == exlength] | [it is null terminated]
-		" %s: %s[%s == %s]" END " | %s[%lld == %lld]" END " | %s[it is null terminated]" END "\n",
+		/* name: [content == excontent] | [length == exlength] | [it is null terminated] */
+		"%s: %s[%s == %s]" END " | %s[%lld == %lld]" END " | %s[it is null terminated]" END "\n",
 		name,
 		(strcmp(excontent, str->content) == 0 ? SUCCESS : ERROR),
 		str->content,
